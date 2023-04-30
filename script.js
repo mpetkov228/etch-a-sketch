@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+container.style.width = `${16 * 27}px`;
 
 function createPad() {
     for (let i = 0; i < 256; i++) {

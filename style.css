@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -7,10 +12,4 @@
     width: 25px;
     height: 25px;
     border: 1px solid black;
-}
-
-.cell:nth-child(16n + 1) {
-    width: 100%;
-    border: 0;
-    height: 0;
 }
