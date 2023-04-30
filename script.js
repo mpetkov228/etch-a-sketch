@@ -1,19 +1,32 @@
-const container = document.querySelector('.container');
+const pad = document.querySelector('.pad');
+const button = document.querySelector('button');
 
-container.addEventListener('mouseover', e => {
-    if (e.target.className == 'container') return;
+button.addEventListener('click', () => {
+    getUserInput();
+});
+
+pad.addEventListener('mouseover', e => {
+    if (e.target.className == 'pad') return;
 
     e.target.classList.add('filled');
 });
 
 function createPad(n) {
+    pad.replaceChildren();
+
     for (let i = 0; i < n * n; i++) {
         const div = document.createElement('div');
-        div.style.width = `${900 / n}px`;
-        div.style.height = `${900 / n}px`;
+        div.style.width = `${700 / n}px`;
+        div.style.height = `${700 / n}px`;
         div.classList.add('cell');
-        container.appendChild(div);
+        pad.appendChild(div);
     }
+}
+
+function getUserInput() {
+    let size = Number(prompt('Enter grid size:'));
+
+    createPad(size);
 }
 
 createPad(64);
