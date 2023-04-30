@@ -1,5 +1,4 @@
 const container = document.querySelector('.container');
-container.style.width = `${16 * 27}px`;
 
 container.addEventListener('mouseover', e => {
     if (e.target.className == 'container') return;
@@ -7,12 +6,14 @@ container.addEventListener('mouseover', e => {
     e.target.classList.add('filled');
 });
 
-function createPad() {
-    for (let i = 0; i < 256; i++) {
+function createPad(n) {
+    for (let i = 0; i < n * n; i++) {
         const div = document.createElement('div');
+        div.style.width = `${900 / n}px`;
+        div.style.height = `${900 / n}px`;
         div.classList.add('cell');
         container.appendChild(div);
     }
 }
 
-createPad();
+createPad(64);
