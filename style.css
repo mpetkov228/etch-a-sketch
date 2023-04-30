@@ -1,9 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
+    margin-top: 100px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -12,4 +14,8 @@
     width: 25px;
     height: 25px;
     border: 1px solid black;
+}
+
+.filled {
+    background-color: black;
 }
