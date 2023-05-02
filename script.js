@@ -1,9 +1,7 @@
 const pad = document.querySelector('.pad');
 const button = document.querySelector('button');
 
-button.addEventListener('click', () => {
-    getUserInput();
-});
+button.addEventListener('click', onClick);
 
 pad.addEventListener('mouseover', e => {
     if (e.target.className == 'pad') return;
@@ -23,10 +21,23 @@ function createPad(n) {
     }
 }
 
-function getUserInput() {
+function onClick() {
     let size = Number(prompt('Enter grid size:'));
+
+    if (size > 100) {
+        return alert('Please enter 100 or less!');
+    }
+
+    if (isNaN(size)) {
+        return alert('Please enter a number!');
+    }
+
+    if (size < 1) {
+        return alert('Please enter a number greater than 0!');
+    }
 
     createPad(size);
 }
 
-createPad(64);
+
+createPad(16);
